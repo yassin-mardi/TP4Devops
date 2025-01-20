@@ -1,7 +1,8 @@
 pipeline {
     environment {
-        registry = "nijimora/tp4"
-        registryCredential = 'dockerhub'
+        registry = "nijimora/tp4" // your dockerhub credentials (to change)
+        registryCredential = 'dockerhub' // this credentialID is created in jenkins and
+                                         //contain dockerhub credentials(to change)
         dockerImage = ''
     }
     agent any
@@ -9,8 +10,8 @@ pipeline {
         stage('Cloning Git') {
             steps {
                 git branch: 'main',
-                    credentialsId: 'yassin-mardi',
-                    url: 'https://github.com/yassin-mardi/TP4Devops.git'
+                    credentialsId: 'yassin-mardi', // your GIT credentials (to change)
+                    url: 'https://github.com/yassin-mardi/TP4Devops.git' // your GIT repo (to change)
             }
         }
         stage('Building Image') {
